@@ -3,13 +3,13 @@
         "id": 1,
         "nickname": "Ali",
         "level": 12,
-        "active": true
+        "active": false
     },
     {
         "id": 2,
         "nickname": "Alisher",
         "level": 12,
-        "active": true
+        "active": false
     },
     {
         "id": 3,
