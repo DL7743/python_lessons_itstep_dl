@@ -12,3 +12,27 @@
 # • Создайте feature/settings, добавьте settings.json и коммит.
 # • Вернитесь в main и объедините ветку.
 # • Проверьте status и log --graph после merge.
+
+# 04  Учебный конфликт
+# • В двух ветках измените одну строку файла slogan.txt по-разному.
+# • Выполните merge, найдите маркеры конфликта и оставьте согласованный вариант.
+# • Завершите merge отдельным коммитом.
+
+# 06  Надёжное хранилище
+# • Напишите load_db и save_db.
+# • При отсутствии файла или повреждённом JSON возвращайте пустую структуру базы.
+# • Сохраняйте кириллицу без кодов Unicode и используйте отступ 4.
+import json
+# вводим переменную для файла json 
+FILE_NAME = "database.json"
+# создаем функцию для чтения файла с поиском возможных ошибок в случае отсутствия или повреждения файла
+def load_db():
+    try:
+        with open(FILE_NAME, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+            return {}
+# создаем функцию сохранения и перезаписи файла   
+def save_db(data):
+    with open(FILE_NAME, "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
