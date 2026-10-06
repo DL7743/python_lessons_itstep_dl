@@ -7,7 +7,10 @@ import json
 with open("quest_db.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
-print(f"Players: {data["players"]}")
+players_list = data[0]["players"]
+count = len(players_list)
+
+print(f"Players: {count}")
 
 
 
