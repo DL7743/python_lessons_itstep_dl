@@ -36,3 +36,4 @@ def load_db():
 def save_db(data):
     with open(FILE_NAME, "w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+        
